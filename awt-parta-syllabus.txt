@@ -1,0 +1,19 @@
+Part - A
+1. Build a dynamic and responsive web page for a college using HTML, CSS, and JavaScript.
+The application should use various HTML tags such as text formatting, images, lists, tables,
+and forms. Apply CSS for styling and responsive design. Implement JavaScript to enable
+navigation between different pages or sections like Home, About, Courses, and Contact, and
+add basic interactivity.
+2. Create a page with Tailwind CSS product cards styled using max-w-sm, shadow-md,
+rounded-lg, and hover effects like hover:shadow-xl. Style the image with object-cover,
+rounded-t-lg, h-48 and text with font-bold, text-gray-700, and text-sm.
+3. PHP program : Insertion, Extraction and Processing of Data using a database
+4. Type script program: Inventory Management System
+5. Create a React application that includes a form with a textbox component, a dropdown
+component, and a submit button component. Each form element should be implemented as a
+separate, reusable component.
+6. Build a React application using Material UI components that includes a form to accept a first
+name and a last name. Implement a “Greet Me” button which, when clicked, displays an alert
+with the message “Hello [first name] [last name]!”. Additionally, include a Material UI
+button that toggles the visibility of a Material UI Card component. The card should display a
+welcome message using the entered name.

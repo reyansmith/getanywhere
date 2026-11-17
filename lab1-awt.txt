@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>st joseph Engineering College</title>
+
+
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        nav {
+            background-color: #222;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+        nav button {
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+
+        nav button:hover {
+            background-color: #0066cc;
+        }
+
+
+        section {
+            display: none;
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+        #home {
+            display: block;
+        }
+
+
+        img {
+            width: 300px;
+            max-width: 100%;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+
+        th {
+            background-color: #003366;
+            color: white;
+        }
+
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+
+        .submit {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            nav button {
+                display: block;
+                width: 100%;
+                margin: 2px;
+            }
+
+
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <h1>SJEC College</h1>
+        <p><b>Knowledge | Excellence | Success</b></p>
+    </header>
+
+
+    <!-- Navigation -->
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('about')">About</button>
+        <button onclick="showPage('courses')">Courses</button>
+        <button onclick="showPage('contact')">Contact</button>
+    </nav>
+
+
+    <!-- Home Section -->
+    <section id="home">
+
+
+        <h2>Welcome to SJEC College</h2>
+
+
+        <p>
+            Welcome to <b>SJEC</b>.
+            We provide <i>quality education</i> and
+            prepare students for a <u>successful career</u>.
+        </p>
+
+
+        <img src="https://via.placeholder.com/600x250"
+             alt="College Image">
+
+
+        <h3>Why Choose Us?</h3>
+
+
+        <ul>
+            <li>Experienced Faculty</li>
+            <li>Modern Laboratories</li>
+            <li>Good Placement Opportunities</li>
+            <li>Student Activities</li>
+        </ul>
+
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+
+        <h2>About Our College</h2>
+
+
+        <p>
+           SJEC was established with the aim of providing
+            <strong>quality education</strong> to students.
+        </p>
+
+
+        <h3>Our Vision</h3>
+
+
+        <p>
+            To become a centre of excellence in education.
+        </p>
+
+
+        <h3>Our Mission</h3>
+
+
+        <ol>
+            <li>Provide quality education</li>
+            <li>Develop technical skills</li>
+            <li>Encourage innovation</li>
+        </ol>
+
+
+    </section>
+
+
+    <!-- Courses Section -->
+    <section id="courses">
+
+
+        <h2>Courses Offered</h2>
+
+
+        <table>
+
+
+            <tr>
+                <th>Course</th>
+                <th>Duration</th>
+                <th>Eligibility</th>
+            </tr>
+
+
+            <tr>
+                <td>BCA</td>
+                <td>3 Years</td>
+                <td>12th Pass</td>
+            </tr>
+
+
+            <tr>
+                <td>BBA</td>
+                <td>3 Years</td>
+                <td>12th Pass</td>
+            </tr>
+
+
+            <tr>
+                <td>MCA</td>
+                <td>2 Years</td>
+                <td>Degree</td>
+            </tr>
+
+
+        </table>
+
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+
+        <h2>Contact Us</h2>
+
+
+        <form onsubmit="submitForm(event)">
+
+
+            <label>Name:</label><br>
+            <input type="text" id="name" required><br>
+
+
+            <label>Email:</label><br>
+            <input type="email" required><br>
+
+
+            <label>Message:</label><br>
+            <textarea rows="5"></textarea><br>
+
+
+            <button class="submit" type="submit">
+                Submit
+            </button>
+
+
+        </form>
+
+
+        <p id="message"></p>
+
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SJEC College. All Rights Reserved.</p>
+    </footer>
+
+
+
+
+    <!-- JavaScript -->
+    <script>
+
+
+        // Function to display pages
+        function showPage(pageName) {
+
+
+            // Get all sections
+            let sections = document.querySelectorAll("section");
+
+
+            // Hide all sections
+            sections.forEach(function(section) {
+                section.style.display = "none";
+            });
+
+
+            // Show selected section
+            document.getElementById(pageName).style.display = "block";
+        }
+
+
+
+
+        // Form submit function
+        function submitForm(event) {
+
+
+            // Stop page from refreshing
+            event.preventDefault();
+
+
+            // Get student name
+            let name = document.getElementById("name").value;
+
+
+            // Display message
+            document.getElementById("message").innerHTML =
+                "Thank you, " + name + "! Your message has been submitted.";
+        }
+
+
+    </script>
+
+
+</body>
+</html>

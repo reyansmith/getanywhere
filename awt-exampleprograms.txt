@@ -1,0 +1,661 @@
+﻿Write a Javascript program to move the elements from left to right
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving an Element</title>
+
+
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: dodgerblue;
+            position: relative;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+ <h2>Move Element Using JavaScript</h2>
+<div id="box"></div>
+ <button onclick="moveBox()">Move Right</button>
+<script>
+        let position = 0;
+function moveBox() {
+let box = document.getElementById("box");
+let movement = setInterval(function() {
+if (position >= 300) {
+                    clearInterval(movement);
+                }
+
+
+
+
+                Else
+ {
+                    position = position + 5;
+                    box.style.left = position + "px";
+                }
+
+
+            }, 50);
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+Moving Elements by using SetTime out method
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving Using setTimeout</title>
+
+
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background: green;
+            position: relative;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h3>Move Box Using setTimeout()</h3>
+
+
+    <div id="box"></div>
+
+
+    <button onclick="move()">Move Right</button>
+
+
+    <script>
+        let position = 0;
+
+
+        function move() {
+
+
+            let box = document.getElementById("box");
+
+
+            if (position < 300) {
+
+
+                position = position + 5;
+                box.style.left = position + "px";
+
+
+                setTimeout(move, 50);
+            }
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Using Request Animation Method
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving Using Animation Frame</title>
+
+
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background: orange;
+            position: relative;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h3>Move Box Using requestAnimationFrame()</h3>
+
+
+    <div id="box"></div>
+
+
+    <button onclick="startMove()">Move Right</button>
+
+
+    <script>
+        let position = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function startMove() {
+
+
+            let box = document.getElementById("box");
+             function animate() {
+ 
+               position = position + 3;
+
+
+                box.style.left = position + "px";
+
+
+                if (position < 300) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+
+            requestAnimationFrame(animate);
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using transform 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transform Movement</title>
+
+
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h3>Moving Using Transform</h3>
+
+
+    <div id="box"></div>
+
+
+    <button onclick="moveBox()">Move Right</button>
+    <script>
+        function moveBox() {
+
+
+            let box = document.getElementById("box");
+
+
+            box.style.transform = "translateX(200px)";
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+Mouse Curser events 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Following Box</title>
+
+
+    <style>
+        #box {
+            width: 40px;
+            height: 40px;
+            background: red;
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h2>Move the Mouse to Move the Box</h2>
+
+
+    <div id="box"></div>
+
+
+    <script>
+
+
+        let box = document.getElementById("box");
+
+
+        document.addEventListener("mousemove", function(event) {
+
+
+            box.style.left = event.clientX + "px";
+            box.style.top = event.clientY + "px";
+
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+Change an image when clicked 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Click Event</title>
+</head>
+
+
+<body>
+
+
+    <h2>Click the Image to Change It</h2>
+
+
+    <img id="photo"
+         src="https://placehold.co/200x120/2196f3/ffffff?text=Image+1"
+         width="200">
+
+
+    <br><br>
+
+
+    <button onclick="changeImage()">Change Image</button>
+
+
+    <script>
+
+
+        function changeImage() {
+
+
+            document.getElementById("photo").src =
+            "https://placehold.co/200x120/4caf50/ffffff?text=Image+2";
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+Display a message when a button is clicked 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Click Event</title>
+</head>
+
+
+<body>
+
+
+    <h2>Reacting to Mouse Click</h2>
+
+
+    <button id="btn">Click Me</button>
+
+
+    <p id="message"></p>
+
+
+    <script>
+
+
+        let button = document.getElementById("btn");
+
+
+        button.addEventListener("click", function() {
+
+
+            document.getElementById("message").innerHTML =
+                "Welcome to JavaScript!";
+
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+Change the background colour when clicked 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background</title>
+</head>
+
+
+<body>
+
+
+    <h2>Change Background Colour</h2>
+
+
+    <button onclick="changeColor()">Change Colour</button>
+
+
+    <script>
+
+
+        function changeColor() {
+
+
+            document.body.style.backgroundColor = "lightblue";
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Show and hide content using a mouse click 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show and Hide</title>
+</head>
+
+
+<body>
+
+
+    <h2>Show and Hide Content</h2>
+
+
+    <p id="content">JavaScript makes webpages interactive!</p>
+
+
+    <button onclick="hideContent()">Hide</button>
+
+
+    <button onclick="showContent()">Show</button>
+
+
+    <script>
+
+
+        function hideContent() {
+
+
+            document.getElementById("content").style.display = "none";
+
+
+        }
+
+
+        function showContent() {
+
+
+            document.getElementById("content").style.display = "block";
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+Moving elements
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Elements in JavaScript</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="moveBox(20, 20)">Move Right & Down</button>
+    <button onclick="moveBox(-20, -20)">Move Left & Up</button>
+    <div id="box"></div>
+
+
+    <script>
+        function moveBox(dx, dy) {
+            let box = document.getElementById("box");
+            let top = parseInt(box.style.top) || 50;
+            let left = parseInt(box.style.left) || 50;
+            
+            box.style.top = (top + dy) + "px";
+            box.style.left = (left + dx) + "px";
+        }
+    </script>
+</body>
+</html>
+
+
+Positioning elements
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Elements in JavaScript</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="moveBox(20, 20)">Move Right & Down</button>
+    <button onclick="moveBox(-20, -20)">Move Left & Up</button>
+    <div id="box"></div>
+
+
+    <script>
+        function moveBox(dx, dy) {
+            let box = document.getElementById("box");
+            let top = parseInt(box.style.top) || 50;
+            let left = parseInt(box.style.left) || 50;
+            
+            box.style.top = (top + dy) + "px";
+            box.style.left = (left + dx) + "px";
+        }
+    </script>
+</body>
+</html>
+
+
+Change color
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .attendance-box {
+            border: 2px solid black;
+            padding: 15px;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        .status {
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 150px;
+        }
+        button {
+            margin-top: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h2>Student Attendance System</h2>
+
+
+    <div class="attendance-box">
+        <p><strong>Student Name:</strong> Ananya</p>
+        <button onclick="updateAttendance('status1')">Mark Present/Absent</button>
+        <p id="status1" class="status" style="background-color: lightcoral; color: white; font-family: 'Courier New', monospace;">Absent</p>
+    </div>
+
+
+    <div class="attendance-box">
+        <p><strong>Student Name:</strong>Bhoomika</p>
+        <button onclick="updateAttendance('status2')">Mark Present/Absent</button>
+        <p id="status2" class="status" style="background-color: lightcoral; color: white; font-family: 'Courier New', monospace;">Absent</p>
+    </div>
+
+
+    <script>
+        function updateAttendance(statusId) {
+            let statusElement = document.getElementById(statusId);
+
+
+            if (statusElement.textContent === "Absent") {
+                statusElement.textContent = "Present";
+                statusElement.style.backgroundColor = "lightgreen";
+                statusElement.style.color = "black";
+                statusElement.style.fontFamily = "Arial, sans-serif";
+                statusElement.style.fontSize = "16px";
+            } else {
+                statusElement.textContent = "Absent";
+                statusElement.style.backgroundColor = "lightcoral";
+                statusElement.style.color = "white";
+                statusElement.style.fontFamily = "Courier New, monospace";
+                statusElement.style.fontSize = "14px";
+            }
+        }
